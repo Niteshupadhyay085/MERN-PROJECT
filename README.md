@@ -5,21 +5,6 @@ It includes secure user login and signup, token-based authentication, and CRUD o
 
 ---
 
-## 📖 Table of Contents
-
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Folder Structure](#folder-structure)
-- [Installation](#installation)
-- [Running the App](#running-the-app)
-- [Environment Variables](#environment-variables)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
 ## 📘 About
 
 This project demonstrates how to build a production-ready full-stack web application using the MERN stack.  
