@@ -1,0 +1,518 @@
+/* :root{
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+body{
+  background-color: #f1f1f1;
+  margin: 0;
+  font-family: poppins, sans-serif;
+}
+header{
+  background-color: #fff;
+}
+header .container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a{
+  color: #333;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.home{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+.workout-details{
+  background-color: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+.workout-details h4{
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+.workout-details p{
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+.workout-details span{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-radius: 50%;
+  color: #333;
+}
+
+label,input {
+  display: block;
+
+}
+input{
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button{
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 12px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+div.error{
+  padding: 10px;
+  background-color: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error{
+  border: 1px solid var(--error);
+  /* background-color: var(--error); */
+/* }
+.material-symbols-outlined {
+  font-size: 28px;
+  color: red;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.material-symbols-outlined:hover {
+  color: darkred;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+
+}
+nav a{
+  margin-left: 10px;
+
+}
+
+nav button{
+  background-color: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: serif;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 12px;
+}
+
+
+form.signup, form.login{
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 25px;
+}  */
+
+
+
+/* Root Colors and Global Styles */
+:root {
+  --primary: #1aac83;
+  --secondary: #f8f9fa;
+  /* ✅ Added: soft background */
+  --error: #e7195a;
+  --text-dark: #333;
+  --text-light: #777;
+  --card-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  /* ✅ Added */
+}
+
+body {
+  background-color: var(--secondary);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+}
+
+/* ✅ Improved Header */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 6px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header a:hover {
+  color: var(--primary);
+  /* ✅ Added hover effect */
+}
+
+/* Page Wrapper */
+.pages {
+  max-width: 1200px;
+  padding: 30px 20px;
+  margin: 0 auto;
+}
+
+/* ✅ Improved Home Grid Layout */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: 1fr;
+    /* ✅ Responsive for mobile */
+  }
+}
+
+/* Workout Card */
+.workout-details {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  margin: 20px 0;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 4px 10px var(--shadow);
+  /* ✨ Softer shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.workout-details:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px var(--shadow);
+}
+
+.workout-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.workout-details p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.workout-details span {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--text-dark);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.workout-details span:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* ✅ Improved Form Styles */
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+input {
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary);
+}
+
+/* Buttons */
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 12px;
+  font-family: "Poppins";
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+form button:hover {
+  background: #149a73;
+  transform: scale(1.02);
+}
+
+/* Error Messages */
+div.error {
+  padding: 10px;
+  background-color: #ffeaea;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: var(--border-radius);
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* Delete Icon */
+.material-symbols-outlined {
+  font-size: 26px;
+  color: var(--error);
+  cursor: pointer;
+  vertical-align: middle;
+  transition: color 0.2s ease;
+}
+
+.material-symbols-outlined:hover {
+  color: #b41641;
+}
+
+/* ✅ Improved Navigation */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+nav button {
+  background-color: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 14px;
+  border-radius: var(--border-radius);
+  font-family: 'Poppins';
+  cursor: pointer;
+  font-size: 0.95em;
+  margin-left: 15px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* ✅ Improved Login/Signup Form */
+form.signup,
+form.login {
+  max-width: 400px;
+  margin: 60px auto;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+form.signup:hover,
+form.login:hover {
+  transform: translateY(-3px);
+}
+
+form.signup h4,
+form.login h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+/* 🟢 Auth Page Container */
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+/* 🟢 Form Card Style */
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 35px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.auth-form h2 {
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* 🟢 Input Fields */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 38px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 3px rgba(26, 172, 131, 0.3);
+}
+
+/* 🟢 Buttons */
+.auth-btn {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.auth-btn:hover {
+  /* background: var(--primary-dark); */
+  transform: scale(1.02);
+}
+
+.auth-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* 🟢 Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* General button style for Login & Signup */
+button {
+  background-color: #007bff; /* nice blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #0056b3; /* darker blue on hover */
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Disabled state */
+button:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+/* For specific forms (optional) */
+form.login, form.signup {
+  max-width: 350px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+form.login h4, form.signup h4 {
+  text-align: center;
+  color: #333;
+}
